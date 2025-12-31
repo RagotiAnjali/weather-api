@@ -67,22 +67,23 @@
             document.querySelector(".humidity").innerHTML = data.main.humidity+"%";
             document.querySelector(".wind").innerHTML = data.wind.speed+"km/h";
 
-            if(data.weather [0].main == "Clouds"){
-                weatherIcon.src = "clouds.png"
-                
-            }
-            else if(data.weather [0].main == "Rain"){
-                weatherIcon.src = "rain.png"
-            }
-            else if(data.weather [0].main == "Drizzle"){
-                weatherIcon.src = "drizzle.png"
-            }
-            else if(data.weather [0].main == "Clear"){
-                weatherIcon.src = "clear.png"
-            }
-            else if(data.weather [0].main == "Mist"){
-                weatherIcon.src = "mist.png"
-            }
+            const weather = data.weather[0].main.toLowerCase();
+
+                if (weather === "clouds") {
+                  weatherIcon.src = "clouds.png";
+                } 
+                else if (weather === "clear") {
+                  weatherIcon.src = "clear.png";
+                } 
+                else if (weather === "rain") {
+                  weatherIcon.src = "rain.png";
+                } 
+                else if (weather === "drizzle") {
+                  weatherIcon.src = "drizzle.png";
+                } 
+                else if (weather === "mist") {
+                  weatherIcon.src = "mist.png";
+                }
 
             document.querySelector(".weather").style.display="block";
             document.querySelector(".error").style.display="none";
@@ -109,3 +110,4 @@
 </body>
 
 </html>
+
